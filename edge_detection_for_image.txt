@@ -1,0 +1,19 @@
+import cv2
+import os
+from matplotlib import pyplot as plt
+
+
+
+
+img = cv2.imread('E:/IITH/images ivf dataset/Frame001.png')
+
+img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+cv2.imshow('originalb&w',img_gray)
+cv2.waitKey(0)
+edges = cv2.Canny(img_gray,100,100)
+path = 'E:/image processing stuffs'
+cv2.imwrite(os.path.join(path , 'frame001.png'), edges)
+
+cv2.imshow('Edges',edges)
+
+cv2.waitKey(0)
